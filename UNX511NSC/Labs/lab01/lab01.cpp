@@ -11,7 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
-#include <dirent.h> // for opendir, readdir, closedir, linux library, not available in windows
+//#include <dirent.h> // for opendir, readdir, closedir, linux library, not available in windows
 #include <cstring>
 #include <string>
 #include <sstream>
