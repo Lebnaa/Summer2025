@@ -153,6 +153,6 @@ List the members of your group member below:
 ```
 
 6. Run lab2timing.py with increasing values of the amount of data (increase by 1000 each time).  Is there a pattern? (Note: ensure that you are using the same "machine" as you change the data size.  Ideally a local computer to avoid inconsistencies).  Does the timing reflect what you expect based on your analysis?
-7. We changed the data size by 2 or 3000 every time and looked at the time run of the functions. The run time did change but it the ranking function did not. The slowest one remained slow and the faster function remained faster
+   We changed the data size by 2 or 3000 every time and looked at the time run of the functions. The run time did change but it the ranking function did not. The slowest one remained slow and the faster function remained faster
 
 
