@@ -1,0 +1,40 @@
+/******************************************************************************
+***
+* UNX511-Lab2
+* I declare that this lab is my own work in accordance with Seneca Academic Policy.
+* No part of this assignment has been copied manually or electronically from any other source
+* (including web sites) or distributed to other students.
+*
+* Name: Lebna Student ID: 157672205 Date: May,22/2025
+*
+*
+******************************************************************************
+**/
+
+D1) On a scale from 1 to 5, How much did you use generative AI to complete this
+assignment?
+▪ where:
+▪ 1 means you did not use generative AI at all
+▪ 2 means you used it very minimally
+▪ 3 means you used it moderately
+▪ 4 means you used it significantly
+▪ 5 means you relied on it almost entirely
+▪ Your answer : I did gen AI significantly, with work with libPidUtil.a, as i had hard a time trying to copying the contens of the file to the newly file i created in my terminal along my other files for this lab. Later after some reseach i figured I could copy the file directly to where myother files are with a command line which is 
+(cp /mnt/c/Users/lebna/Downloads/libPidUtil.a ~/Lab2/). Gen AI was really helpful during the process of compiling the whole project together. 
+
+
+D2) On a scale from 1 to 5, How confident are you in your understanding of the
+generative AI support you utilized in this assignment, and in your ability to explain it if
+questioned?
+▪ where:
+▪ 1 means "Not confident at all – I do not understand the generative AI support I
+used and cannot explain it."
+▪ 2 means "Slightly confident – I understand a little, but I have many
+uncertainties."
+▪ 3 means "Moderately confident – I understand the majority of the support,
+though some parts are unclear."
+▪ 4 means "Very confident – I understand most of the AI support well and can
+explain it with minor gaps."
+▪ 5 means "Extremely confident – I fully understand the generative AI support I
+used and can clearly explain or justify it if asked."
+▪ Your answer : I would say I am "Very confident" in my understanding, as if we ever have to do copy files directly from a place to another, example your local machine to working directly in cmd, I would be easily figure it out and deal with files like libPidUtil.a more faster and efficiently. 
