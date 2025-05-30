@@ -25,7 +25,7 @@ def function1(number):
 ### function 2:
 
 Analyze the following function with respect to number
-
+```python
 def function2(number):
 	return (number * (number + 1) * (2 * number + 1)) // 6 # 7 ops 
 
@@ -33,7 +33,7 @@ T(n) = 7, therefore T(n) is O(1) as it constant
 	because:
 	T(n)≤cf(n) for all n≥n0 
 	7 ≤ 20
-   
+```
 
 ### function 3:
 
