@@ -76,6 +76,7 @@ n-2	    1								n-2 3 +	  1	   4
 ### function 4:
 
 Analyze the following function with respect to number
+```python
 
 def function4(number):
 	total = 1 # 1 ops
@@ -88,7 +89,7 @@ def function4(number):
 	because:
 		T(n)≤cf(n) for all n≥n0 
 		1n+6 ≤ 10n 
-
+```
 
 ## In class portion
 
