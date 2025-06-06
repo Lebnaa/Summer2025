@@ -1,38 +1,20 @@
-// src/app.js
-
-import { signIn, getUser } from './auth';
-// modifications to src/app.js
-import { getUserFragments } from './api';
-
-
-async function init() {
-  // Get our UI elements
-  const userSection = document.querySelector('#user');
-  const loginBtn = document.querySelector('#login');
-  
-
-  // Wire up event handlers to deal with login and logout.
-  loginBtn.onclick = () => {
-    // Sign-in via the Amazon Cognito Hosted UI (requires redirects), see:
-    signIn();
-  };
-
-  // See if we're signed in (i.e., we'll have a `user` object)
-  const user = await getUser();
-  if (!user) {
-    return;
-  }
-  const userFragments = await getUserFragments(user);
-
-  // Update the UI to welcome the user
-  userSection.hidden = false;
-
-  // Show the user's username
-  userSection.querySelector('.username').innerText = user.username;
-
-  // Disable the Login button
-  loginBtn.disabled = true;
-}
-
-// Wait for the DOM to be ready, then start the app
-addEventListener('DOMContentLoaded', init);
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Fragments UI</title>
+    <link rel="stylesheet" href="https://unpkg.com/bamboo.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <h1>Fragments UI</h1>
+    <section>
+      <nav>
+        <button id="login">Login</button>
+      </nav>
+    </section>
+    <section hidden id="user">
+      <h2>Hello <span class="username"></span>!</h2>
+    </section>
+  </body>
+</html>

@@ -23,7 +23,6 @@ router.get('/', (req, res) => {
   res.status(200).json({
     status: 'ok',
     author,
-    // Use your own GitHub URL for this!
     githubUrl: 'https://github.com/Lebnaa/fragments',
     version,
   });

@@ -2,21 +2,30 @@
   "name": "fragments-ui",
   "private": true,
   "version": "0.0.1",
-  "description": "Fragments UI testing web app",
+  "description": "ccp555",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "start": "parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel",
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Lebnaa/fragments-ui.git"
   },
-  "author": "REPLACE_WITH_YOUR_NAME",
+  "author": "Bobby <bli120@myseneca.ca",
   "license": "UNLICENSED",
-  "dependencies": {
-    "oidc-client-ts": "^3.2.1"
-  },
   "devDependencies": {
-    "parcel": "^2.15.1"
+    "buffer": "^5.7.1",
+    "parcel": "^2.15.2",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "punycode": "^1.4.1",
+    "querystring-es3": "^0.2.1",
+    "url": "^0.11.4"
+  },
+  "dependencies": {
+    "aws-amplify": "^5.2.2"
   }
 }
