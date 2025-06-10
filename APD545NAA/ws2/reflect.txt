@@ -1,0 +1,9 @@
+1. How did you ensure scalability in your application design? Provide examples.
+To keep the application scalable, I followed the MVC (Model-View-Controller) pattern as mentioned in the description, which made it easy to expand features in the future without rewriting existing code. For example, all vehicle data is stored in separate model classes (Vehicle, MaintenanceRecord, and UsageLog), so if I ever need to connect this to a database or add a GUI later, the data layer won’t need major changes. I also used ArrayList to store records, which allows for easy scaling as more records are added.
+
+2. What challenges did you face during data handling, and how did you overcome them?
+One challenge was keeping the data organized when different types of records (vehicles, maintenance, and usage) needed to be stored and displayed. To manage this, I created separate lists for each type of data and kept the data entry logic clean by using separate sections in the menu. Another small issue was handling incorrect input (like non-numeric values for year or kilometers), which I solved with simple input validation using try-catch.
+
+3. How does your solution balance usability and technical efficiency? Reflect on specific choices.
+Even though it’s a console app, I tried to make the user experience as smooth as possible. I provided a clear text-based menu and labeled prompts so users always know what to enter. Technically, using separate model classes helps keep the code clean and efficient. I also avoided unnecessary complexity—sticking to simple lists and basic loops to keep the program easy to maintain and understand.
+
