@@ -1,0 +1,16 @@
+docker run --rm --name fragments --env-file .env -p 8080:8080 fragments:latest
+
+
+ec2-user@ec2-3-82-196-150.compute-1.amazonaws.com
+
+
+scp -i ccp555-key-pair.pem fragments-1.1.1.tgz ec2-user@ec2-3-82-196-150.compute-1.amazonaws.com:
+
+
+to pack: 
+get into folder 
+- npm pack 
+once packed :
+- tar -xvzf fragments-1.1.1.tgz
+
+curl http://ec2-3-82-196-150.compute-1.amazonaws.com:8080/v1/health
