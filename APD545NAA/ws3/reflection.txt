@@ -1,0 +1,12 @@
+1. Challenges with loan calculation
+I found the math behind calculating payments tricky, especially handling different interest rates and zero interest. I fixed this by breaking down the formula step-by-step and testing with examples.
+
+2. Showing accurate and formatted amortization data
+I used a custom class to hold payment details and set up the table to show these properly. I rounded numbers to two decimals so the values look clean and easy to read.
+
+3. Most challenging part
+Connecting the calculations to the UI and showing the full payment schedule was hard. I learned how to use JavaFX tables and organize data to work well with the interface.
+
+4. Future improvements
+I’d add saving loans to files and charts to visualize payments over time. I’d build these features step-by-step, starting with saving data and then adding visuals.
+
