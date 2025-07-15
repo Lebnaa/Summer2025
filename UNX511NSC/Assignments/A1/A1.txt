@@ -1,0 +1,72 @@
+Part 1: Dynamic File Generation
+Q1: Why do we use O_CREAT | O_TRUNC in open()?
+O_CREAT creates the file if it doesn’t exist.
+O_TRUNC clears the file’s contents if it does exist.
+This ensures each execution starts with a fresh file instead of appending to old data.
+
+Q2: What happens if write() fails inside the loop?
+The data won’t be written to the file.
+write() returns -1 and sets errno.
+If we don’t check for errors, we might assume the file is valid when it’s incomplete or corrupted.
+
+Q3: Why do we use memset() before writing to the file?
+memset() fills the buffer with dummy data (like 'X') to make real binary content.
+It make sure each MB written has actual bytes rather than random garbage.
+
+
+Part 2: Worker Processes
+Q1: Why do we check /proc/self/status for memory usage?
+It’s a special file that shows real-time info about the current process.
+We use it to check how much memory the worker is using (VmRSS) at any point in time.
+
+Q2: What would happen if kill(parent_pid, SIGUSR1) fails?
+If the parent PID is invalid or has exited, kill() fails and returns -1.
+The signal won’t be sent, so the parent won’t be notified.
+It’s important to check the return value and possibly log an error.
+
+
+Q3: How does read() behave differently in blocking vs non-blocking mode?
+In blocking mode (default), read() waits until data is available.
+In non-blocking mode, read() returns immediately, even if there’s no data yet (returns 0 or -1).
+Blocking mode is safer for large file reads like this to avoid race conditions.
+
+
+Part 3: Parent Process & Signals
+Q1: What happens if two workers send SIGUSR1 at the same time?
+Signals are asynchronous, and they can arrive almost simultaneously.
+But the OS queues and delivers them one at a time.
+If we don’t track workers properly, we might print or log duplicate memory warnings.
+
+
+Q2: Why is signal(SIGUSR1, xx_signal_handler); needed in main()?
+Without it, the process would use the default signal behavior (which might kill the process or do nothing). Registering a handler tells the program how to respond when the signal arrives — e.g., log the event or update status.
+
+
+Part 4: Secure Logging
+Q1: What is F_WRLCK and why do we use it?
+F_WRLCK is a write lock.
+It prevents other processes from writing to the file at the same time, avoiding partial writes or corrupted logs.
+
+
+Q2: How does file locking prevent data corruption?
+It ensures that only one process writes to the log file at a time.
+This avoids issues where multiple workers might mix their messages or overwrite each other’s logs. It’s critical in concurrent environments where many processes access shared files.
+
+
+
+Please answer the following two declarations:
+D1) On a scale from 1 to 5, How much did you use generative AI to complete this assignment? Where:
+	1 means you did not use generative AI at all
+	2 means you used it very minimally
+	3 means you used it moderately
+	4 means you used it significantly
+	5 means you relied on it almost entirely
+	Your answer : I used AI around level (2), to to mainly debug my code, as I 	mentioned in my video to break infinite loop and converting the size of file from 	kb to mb
+
+D2) On a scale from 1 to 5, How confident are you in your understanding of the generative AI support you utilized in this assignment, and in your ability to explain it if questioned? Where:
+	1 means "Not confident at all – I do not understand the generative AI support I 	used and cannot explain it."
+	2 means "Slightly confident – I understand a little, but I have many 		uncertainties."
+	3 means "Moderately confident – I understand the majority of the support, though 	some parts are unclear."
+	4 means "Very confident – I understand most of the AI support well and can 	explain it with minor gaps."
+	5 means "Extremely confident – I fully understand the generative AI support I 	used and can clearly explain or justify it if asked."
+	Your answer : I would say level (5), as I fully understand the things i used AI 	for, for example if in the future i ran into the same issue I most likely will 	not need to use AI and be solve the bug on my own 
