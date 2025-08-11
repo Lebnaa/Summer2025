@@ -1,0 +1,21 @@
+1. Which is your favorite and why?
+I like message queues best because they let processes send and receive messages with clear types, making it easier to manage communication between many programs.
+
+
+2. Which is your least favorite and why?
+I don’t like pipes much because they only send data one way and don’t handle complex communication well between multiple processes.
+
+3. Is there a need for a server in this lab? Why?
+Yes, the server is needed to receive messages from clients and send them to the right client. It keeps communication organized and simple.
+
+
+
+
+D1) On a scale from 1 to 5, How much did you use generative AI to complete this assignment?
+Your answer: 3
+I used generative AI mainly to debug issues like infinite loops and to help structure the server code.
+
+
+D2) On a scale from 1 to 5, How confident are you in your understanding of the generative AI support you utilized in this assignment, and in your ability to explain it if questioned?
+Your answer: 4
+I am confident that I understand the AI support I used and can explain what I learned from it.

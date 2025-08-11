@@ -1,0 +1,8 @@
+Challenges I faced and how I solved them:
+I had trouble loading data from a file because I got an error saying "invalid stream header." After checking, I found out the file I was trying to load was not saved correctly or was opened and changed by a text editor. To fix it, I deleted the old file and saved the data again using Java’s ObjectOutputStream without opening the file in any editor. I also made sure the program was reading the correct file by printing the file path before loading it.
+
+Another problem was making sure the lists in the program update correctly when loading new data. I solved this by clearing the old lists before adding the new data from the file or database.
+
+How I handled inheritance in the database:
+Since InHouse and Outsourced parts are different types of parts, I saved them in one table but added a column called type to say which kind each part is. I also used another column called extra to save extra information — like machineId for InHouse parts or companyName for Outsourced parts. When loading the data, I checked the type column to know which kind of part to create and used the extra column to set the extra detail. This way, I could save and load both kinds of parts even though they are different classes.
+

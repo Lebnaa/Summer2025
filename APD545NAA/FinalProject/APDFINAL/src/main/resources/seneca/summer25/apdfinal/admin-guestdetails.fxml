@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="seneca.summer25.apdfinal.Controller.AdminGuestDetailsController"
+      alignment="CENTER" spacing="20"
+      style="-fx-background-color: rgba(255, 255, 255, 0.9); -fx-background-radius: 15; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 5);">
+
+    <padding>
+        <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+    </padding>
+
+    <Label text="Guest Details" style="-fx-text-fill: #1a3c5e; -fx-font-weight: bold;">
+        <font>
+            <Font name="System Bold" size="24.0"/>
+        </font>
+    </Label>
+
+    <TextArea fx:id="guestDetailsArea" prefWidth="400" prefHeight="200" editable="false"
+              style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-radius: 5; -fx-background-radius: 5;">
+        <font>
+            <Font size="14.0"/>
+        </font>
+    </TextArea>
+
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Check Out Guest" fx:id="checkOutButton" onAction="#handleCheckOut"
+                prefHeight="45" prefWidth="180"
+                style="-fx-background-color: #1a3c5e; -fx-text-fill: white; -fx-background-radius: 5; -fx-font-weight: bold;"/>
+        <Button text="Back" fx:id="backButton" onAction="#handleBack"
+                prefHeight="45" prefWidth="180"
+                style="-fx-background-color: #e0c387; -fx-text-fill: #1a3c5e; -fx-background-radius: 5; -fx-font-weight: bold;"/>
+    </HBox>
+</VBox>

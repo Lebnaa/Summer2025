@@ -1,0 +1,25 @@
+Challenges I Faced and How I Solved Them
+Input Validation & Error Handling: 
+- One of the first challenges I encountered was ensuring that all user inputs were valid, especially when expecting specific data types like integers. Initially, the system would crash if a string was entered instead of a number.
+
+- Solution: I implemented try-catch blocks around all important inputs and logged each exception using Java Logger. This made sure the system wouldn’t crash and would provide helpful log entries for debugging.
+
+Setting Up Java Logging with Rotation: 
+- Java Logger setup seemed simple at first, but configuring it to store logs in rotating files was tricky. It took time to understand how FileHandler works with file size limits and rotation.
+Solution: I researched Java’s logging API and configured the FileHandler to rotate after 1MB, storing up to 10 log files. I used SimpleFormatter for readable formatting.
+
+Applying Room Assignment Logic: 
+- Making sure the system followed the exact room booking rules was also a challenge. For example, deciding when to offer double vs. single rooms when there are more than 2 adults required conditional branching that could easily get confusing.
+
+- Solution: I kept the logic modular by moving it into a dedicated service class (RoomService) with clear if-else conditions. This made it easier to debug and extend if needed.
+
+What I Learned: 
+Importance of Modular Design (MVC):
+Separating the code into models, views, and controllers helped me organize logic clearly and made the system easier to maintain and scale.
+
+I learned how important logging is in a real-world system — not just for debugging but also for tracking admin activity and ensuring accountability.
+
+This project taught me how to properly handle bad input. Writing clean exception-handling code prevented crashes and helped with user experience.
+
+Project Planning & Real-World Simulation:
+Working with realistic constraints — like different room types, guest rules, and admin control — gave me a better understanding of how logic is applied in real-world systems like hotel management platforms.

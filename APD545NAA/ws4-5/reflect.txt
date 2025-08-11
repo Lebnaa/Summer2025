@@ -1,0 +1,11 @@
+1. If you were to use Property types like SimpleStringProperty instead of regular data types like String, would it help?
+
+Yes, using Property types could help, especially in JavaFX. They make it easier to connect the data in the backend to what’s shown in the user interface. For example, if you used SimpleStringProperty, and the data changes, the screen would update automatically. This is called data binding, and it can save time and reduce errors. But for this project, regular types like String and int worked fine because the app didn’t need advanced UI updates.
+
+2. What was the hardest part about handling inventory limits, like keeping stock between min and max?
+The hardest part was making sure the numbers made sense together. For example, the min value can’t be bigger than max or the inventory amount has to be between min and max
+
+It was tricky to check all of this at the right time and show messages that would make sense when the user typed something wrong. I had to make sure the program showed a warning and didn’t let the user save until everything was correct.
+
+3. How did you stop users from doing things they shouldn’t, like deleting a product that still has parts?
+To stop this, I added a check that looks at whether a product still has any parts linked to it. If it does, the app shows a message saying it can’t be deleted yet. This makes sure the user removes the parts first. I also added confirmation pop-ups when the user clicks "delete" or "cancel", so they don’t delete things by mistake.

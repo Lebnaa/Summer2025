@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="616.0" prefWidth="422.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ws.part.ws45.Controller.ModifyPart">
+
+    <children>
+        <VBox layoutX="100" layoutY="50" spacing="10">
+
+            <!-- Title -->
+            <Label style="-fx-font-size: 20px;" text="Modify Part" />
+
+            <!-- Radio Buttons -->
+            <HBox spacing="10">
+                <RadioButton fx:id="inHouseRadio" text="In-House" onAction="#onInHouseSelected" toggleGroup="$sourceToggleGroup" />
+                <RadioButton fx:id="outsourcedRadio" text="Outsourced" onAction="#onOutsourcedSelected" toggleGroup="$sourceToggleGroup" />
+            </HBox>
+
+            <!-- Part ID -->
+            <Label text="ID" />
+            <TextField fx:id="partIdField" editable="false" />
+
+            <!-- Name -->
+            <Label text="Name" />
+            <TextField fx:id="partNameField" />
+
+            <!-- Inventory -->
+            <Label text="Inventory" />
+            <TextField fx:id="partInvField" />
+
+            <!-- Price/Cost -->
+            <Label text="Price/Cost" />
+            <TextField fx:id="partPriceField" />
+
+            <!-- Max -->
+            <Label text="Max" />
+            <TextField fx:id="partMaxField" />
+
+            <!-- Min -->
+            <Label text="Min" />
+            <TextField fx:id="partMinField" />
+
+            <!-- Machine ID or Company Name -->
+            <Label fx:id="partMachineOrCompanyLabel" text="Machine ID" />
+            <TextField fx:id="partMachineOrCompanyField" />
+
+            <!-- Buttons -->
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <Button text="Save" onAction="#onSavePart" />
+                <Button text="Cancel" onAction="#onCancel" />
+            </HBox>
+
+        </VBox>
+    </children>
+</AnchorPane>

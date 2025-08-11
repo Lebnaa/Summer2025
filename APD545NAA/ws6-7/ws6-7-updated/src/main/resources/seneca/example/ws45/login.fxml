@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+            fx:controller="seneca.example.ws45.Controller.Login">
+
+    <children>
+        <VBox alignment="CENTER" spacing="10.0" layoutX="200" layoutY="150">
+            <Label text="Inventory Management System" style="-fx-font-size: 24px;" />
+            <TextField fx:id="usernameField" promptText="Username" />
+            <PasswordField fx:id="passwordField" promptText="Password" />
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Login" onAction="#handleLogin" />
+                <Button text="Cancel" onAction="#handleCancel" />
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

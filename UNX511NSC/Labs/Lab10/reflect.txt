@@ -1,0 +1,8 @@
+D1) On a scale from 1 to 5, How much did you use generative AI to complete this assignment?
+Your answer: 3 
+I used generative AI moderately throughout this assignment. Specifically, for understanding the proper usage of semaphores and shared memory synchronization, as well as resolving errors and improving the inter-process communication logic. However, I wrote most of the code myself and adapted the suggestions to fit the lab requirements. The AI was a helpful guide but not a complete solution provider.
+
+D2) On a scale from 1 to 5, How confident are you in your understanding of the generative AI support you utilized in this assignment, and in your ability to explain it if questioned?
+Your answer: 4 
+I feel very confident in my understanding of the AI support I used. I reviewed all the code and explanations provided, tested them thoroughly, and made sure I grasp the underlying concepts such as semaphore synchronization, shared memory usage, and inter-process communication. I am prepared to explain how the AI suggestions were integrated and to justify my implementation choices if questioned.
+

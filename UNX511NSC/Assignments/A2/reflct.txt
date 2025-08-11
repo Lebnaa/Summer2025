@@ -1,0 +1,16 @@
+1. General Architecture of the Network Monitor (0.5 mark)
+My program is made up of two parts: the network monitor and the interface monitors. The network monitor runs first and listens for connections. Each interface monitor is a separate program that connects to the network monitor and watches one network interface (ens33 or lo). It checks whether the interface is up or down and reads network statistics like how many bytes were sent or received. The interface monitor reports this information back to the network monitor. This design helps monitor many interfaces at the same time.
+
+2. Can they be in one process? How? (0.5 mark)
+Yes, it’s possible to combine the interface monitor and network monitor into one program. We can do this by using threads. The main program would handle the user input, and then it would create a new thread for each interface to monitor. Each thread would collect the network statistics for its interface. Threads can run in parallel and share memory, so everything would stay inside one process.
+
+3. Can they still be one process with 128 interfaces at high speed and 1ms polling? (0.5 mark)
+In theory, yes-but it’s not a good idea. If one process is trying to handle 128 fast interfaces and check them every 1 millisecond, it would need a lot of CPU power and the computer would crash as it happened multiple times to VM workstation while completing the labs. It could become slow or miss updates. It’s better to split the work into multiple processes or threads that can run on different CPU cores. This way, the system doesn’t get overloaded and the program can keep up with the fast network traffic.
+
+4. What is a Software Defined Network (SDN)? Describe the layers. (1.5 marks)
+A Software Defined Network (SDN) is a new way of building and managing networks. Instead of each switch or router making decisions on its own, SDN separates the decision-making into different layers:
+
+	- Application Layer: This is where network apps live — like firewalls, traffic control, 	or monitoring tools. They tell the network what they want to do.
+	- Control Layer: This layer includes the controller, which is like the brain. It listens 	to the apps and sends instructions to the network devices.
+	- Forwarding Layer: These are the actual devices (like switches and routers). They 	follow the controller’s instructions and forward data but don’t make their own 	decisions.
+SDN makes networks easier to manage, update, and change, because you can control everything from a central place.

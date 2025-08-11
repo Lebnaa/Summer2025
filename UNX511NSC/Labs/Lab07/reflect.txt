@@ -1,0 +1,13 @@
+1. How does dup() work?
+
+  - The `dup()` function duplicates a file descriptor. It returns a new file descriptor that points to the same file or pipe as the original. For example, if you call `dup(fd)`, it gives you a new descriptor with the lowest available number adn descriptors will share the same file position and access flags.
+
+
+
+2. How does dup2() work?
+  - The `dup2(oldfd, newfd)` function is like `dup()`, but more controlled. It duplicates `oldfd` into `newfd`. If `newfd` already exists, it is first closed automatically. This is useful when you want to redirect `stdin`, `stdout`, or `stderr` to another file or pipe, like `dup2(pipefd[1], STDOUT_FILENO)`.
+
+
+
+3. How does execlp() work?
+  - The `execlp()` function is used to run a new program. It replaces the current process with the program you specify. The `p` in `execlp` means it looks for the command in the system PATH. The `l` means the arguments are listed out one by one. For example, `execlp("ls", "ls", "-l", NULL)` runs the `ls -l` command. If it succeeds, your code after execlp() won’t run — the current process is replaced.
