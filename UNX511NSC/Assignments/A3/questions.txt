@@ -1,0 +1,43 @@
+1. Generally, what are syslog and rsyslog? Specifically, name three features of syslog/rsyslog and compare them to your embedded debug logging. Will there be any overlap of information?
+Answer: Syslog is a standard protocol used for sending system log messages to a centralized server or local file, mainly used for system and network device logging.
+Rsyslog is an enhanced version of syslog that supports more features like encryption, better filtering, and database storage.
+
+1(A). Three features of syslog/rsyslog:
+- Centralized logging from multiple devices and applications.
+- Supports different log severity levels (e.g., DEBUG, ERROR).
+- Can filter and route logs to different destinations (files, remote servers, databases).
+- Comparison to embedded debug logging:
+
+1(B). Your embedded logging also sends logs with severity levels, but it’s a custom UDP-based system specific to your project.
+Syslog/rsyslog are more mature and flexible, supporting many protocols and security options.
+There will be some overlap because both systems log events and errors, but syslog handles broader system-level logs while your project focuses on application-specific debug logs.
+
+2. Name five features of syslog-ng.
+- Supports various input and output sources (files, TCP/UDP, databases).
+- Flexible filtering and rewriting of log messages.
+- Secure transport using TLS encryption.
+- Log message parsing and structured data support.
+- Ability to aggregate logs from multiple sources and forward them.
+
+3. Name five ways syslog-ng is an improvement over syslog/rsyslog.
+- Better support for structured logging with JSON and XML.
+- More flexible and powerful filtering and routing options.
+- Native support for encrypted log transport with TLS.
+- Improved performance and scalability for large log volumes.
+- Enhanced message parsing and rewriting capabilities.
+
+4. Consider a Log Server that has to manage embedded logs for a massive amount of processes on a massive amount of machines. Name three ways the server could manage the connections to each process.
+Answer:Use a connection pool to limit the number of simultaneous connections and reuse them efficiently.
+Implement asynchronous or event-driven I/O to handle many connections without blocking the server.
+Track client addresses and use UDP multicast or broadcast to reduce the number of direct connections required.
+
+5. Consider a Log Server that has to manage embedded logs for a massive amount of processes on a massive amount of machines. With such a large amount of data in the logs, name three ways a user could extract useful information from them (be general).
+Answer: Filtering logs by severity level (e.g., only errors or warnings) to focus on important messages.
+Searching or querying logs by keywords, timestamps, or specific processes.
+Aggregating and summarizing logs using dashboards or reports to identify trends and anomalies.
+
+6. Explain how gdb could be used on a Linux machine to attach to a process and get thread information. Is this also useful in debugging?
+Answer: GDB (GNU Debugger) can attach to a running process by using the command gdb -p <pid>, where <pid> is the process ID.
+Once attached, you can use the command info threads to list all the threads running in that process.
+This helps identify thread states and stack traces, which is very useful for debugging issues like deadlocks or crashes in multi-threaded programs.
+Yes, it’s a powerful way to debug running applications without stopping them completely.
